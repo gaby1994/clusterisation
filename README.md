@@ -1,6 +1,6 @@
 ### Examen Clusteurisation 
-Auteur : DEGEZ Gabriel
-Date : vendredi 6 mai 2022
+Auteur : DEGEZ Gabriel  
+Date : vendredi 6 mai 2022  
 Lieu : CFA Insta
 
 1 - J'ai crée le fichier *deployment_DEGEZ.yml* qui fait le déploiement de pod de redis vers le cloud. Puis j'ai fait kubectl *create -f deployment_DEGEZ.yml* et *kubectl get pods* pour vérifier.
