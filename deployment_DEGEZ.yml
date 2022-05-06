@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-degez
+  labels:
+    app: redis-degez
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: redis-degez
+  template:
+    metadata:
+      labels:
+        app: redis-degez
+    spec:
+      containers:
+        - name: redis-degez
+          image: redis
+          ports:
+            - containerPort: 6379
+      

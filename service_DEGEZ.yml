@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-degez
+spec:
+  selector:
+    app: redis-degez
+  ports:
+    - port: 6379
+      targetPort: 6379
+  type: LoadBalancer

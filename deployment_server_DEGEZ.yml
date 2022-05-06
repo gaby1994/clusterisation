@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-node-degez
+  labels:
+    app: redis-node-degez
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-node-degez
+  template:
+    metadata:
+      labels:
+        app: redis-node-degez
+    spec:
+      containers:
+        - name: redis-node-degez
+          image: cloud.canister.io:5000/arhturescriou/node-redis
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ADDRESS
+              value: 'planner:3000'
+            - name: PORT
+              value: '8080'
+            - name: MULT
+              value: 'true'
+            - name: ADD
+              value: 'true'
+            - name: REDIS_URL
+              value: redis://10.3.70.212:6379
+      imagePullSecrets:
+        - name: regcred
